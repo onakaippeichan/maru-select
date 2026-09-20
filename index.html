@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="暮らしを少し良くする商品を厳選して紹介するセレクトサイト。">
+  <title>MARU — 暮らしのセレクト</title>
+  <link rel="preconnect" href="https://images.unsplash.com/">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="MARU ホーム">MARU<span>●</span></a>
+    <nav aria-label="メインナビゲーション">
+      <a href="#products">商品を探す</a><a href="#story">私たちについて</a>
+    </nav>
+    <button class="saved-button" id="savedButton" aria-label="お気に入り一覧"><span>♡</span><b id="savedCount">0</b></button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">CURATED FOR EVERYDAY LIFE</p>
+        <h1>いいものを、<br>ちょうどよく。</h1>
+        <p class="hero-text">見た目だけでも、機能だけでもない。毎日に自然となじむ道具を、丁寧に選びました。</p>
+        <a class="primary-link" href="#products">商品を見る <span>↘</span></a>
+      </div>
+      <div class="hero-image" role="img" aria-label="落ち着いた空間に並ぶ暮らしの道具">
+        <div class="hero-label"><span>今月のテーマ</span><strong>整える暮らし</strong></div>
+      </div>
+    </section>
+
+    <section class="catalog" id="products">
+      <div class="section-heading">
+        <div><p class="eyebrow">OUR SELECTION</p><h2>暮らしの道具</h2></div>
+        <p id="resultCount">8 items</p>
+      </div>
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="商品カテゴリ">
+          <button class="filter active" data-filter="all">すべて</button>
+          <button class="filter" data-filter="home">暮らし</button>
+          <button class="filter" data-filter="beauty">美容</button>
+          <button class="filter" data-filter="food">食品</button>
+          <button class="filter" data-filter="fashion">ファッション</button>
+        </div>
+        <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="商品名で検索" aria-label="商品名で検索"></label>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="empty" id="emptyState" hidden>
+        <p>商品が見つかりませんでした。</p>
+        <button id="resetButton">条件をリセット</button>
+      </div>
+    </section>
+
+    <section class="story" id="story">
+      <p class="story-number">01 — OUR POINT OF VIEW</p>
+      <div>
+        <h2>長く使いたくなる<br>理由があるもの。</h2>
+        <p>素材、使いやすさ、つくられ方。流行に左右されず、使うほど愛着が増す商品だけを紹介します。</p>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="productDialog">
+    <button class="dialog-close" aria-label="閉じる">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+  <aside class="saved-panel" id="savedPanel" aria-label="お気に入り" aria-hidden="true">
+    <div class="panel-header"><h2>お気に入り</h2><button id="closeSaved" aria-label="閉じる">×</button></div>
+    <div id="savedList"><p style="color:var(--muted)">気になる商品を♡で保存できます。</p></div>
+  </aside>
+  <div class="overlay" id="overlay" hidden></div>
+
+  <footer>
+    <a class="brand" href="#top">MARU<span>●</span></a>
+    <p>暮らしに、静かな発見を。</p>
+    <small>© 2026 MARU SELECT</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
